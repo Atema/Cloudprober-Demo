@@ -48,7 +48,7 @@ spec:
   selector:
     app: cloudprober
   type: ClusterIP
---
+---
 apiVersion: v1
 kind: Service
 metadata:

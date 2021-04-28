@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testapi
+  template:
+    metadata:
+      annotations:
+        api_version: v1
+      labels:
+        app: testapi
+    spec:
+      containers:
+      - name: testapi
+        image: gcr.io/devops-demo-311817/testapi
+        ports:
+        - name: http
+          containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testapi
+  labels:
+    app: testapi
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: testapi
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testapi-public
+  labels:
+    app: testapi
+spec:
+  ports:
+  - port: 3000
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: testapi
+  type: LoadBalancer
