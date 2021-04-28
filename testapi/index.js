@@ -6,12 +6,12 @@ const start = new Date();
 
 app.get('/', (req, res) => {
 	const millis = Date.now() - start;
-	const seconds = Math.floor(millis / 1000);
+	const minutes = Math.floor(millis / 60000);
 
-	if (seconds % 2 === 0) {
+	if (minutes % 2 === 0) {
 		res.sendStatus(200);
 	} else {
-		res.sendStatus(404);
+		req.socket.end();
 	}
 });
 

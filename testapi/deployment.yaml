@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        api_version: v1
+        api_version: v3
       labels:
         app: testapi
     spec:
