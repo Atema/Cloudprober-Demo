@@ -10,7 +10,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/config: "${CONFIG_CHECKSUM}"
+        checksum/config: "$CONFIG_CHECKSUM"
       labels:
         app: cloudprober
     spec:
@@ -21,11 +21,12 @@ spec:
       containers:
       - name: cloudprober
         image: cloudprober/cloudprober
-        command: ["/cloudprober"]
-        args: [
-          "--config_file","/cfg/cloudprober.cfg",
-          "--logtostderr"
-        ]
+        command:
+        - "/cloudprober"
+        args: 
+        - --config_file
+        - /cfg/cloudprober.cfg
+        - --logtostderr
         volumeMounts:
         - name: cloudprober-config
           mountPath: /cfg
