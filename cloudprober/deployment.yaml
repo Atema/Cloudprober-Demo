@@ -1,25 +1,25 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cloudprober2
+  name: cloudprober
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: cloudprober2
+      app: cloudprober
   template:
     metadata:
       annotations:
         checksum/config: "${CONFIG_CHECKSUM}"
       labels:
-        app: cloudprober2
+        app: cloudprober
     spec:
       volumes:
-      - name: cloudprober2-config
+      - name: cloudprober-config
         configMap:
-          name: cloudprober2-config
+          name: cloudprober-config
       containers:
-      - name: cloudprober2
+      - name: cloudprober
         image: cloudprober/cloudprober
         command: ["/cloudprober"]
         args: [
@@ -27,7 +27,7 @@ spec:
           "--logtostderr"
         ]
         volumeMounts:
-        - name: cloudprober2-config
+        - name: cloudprober-config
           mountPath: /cfg
         ports:
         - name: http
@@ -36,14 +36,29 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: cloudprober2
+  name: cloudprober
   labels:
-    app: cloudprober2
+    app: cloudprober
 spec:
   ports:
   - port: 9313
     protocol: TCP
     targetPort: 9313
   selector:
-    app: cloudprober2
-  type: NodePort
+    app: cloudprober
+  type: ClusterIP
+--
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloudprober-public
+  labels:
+    app: cloudprober
+spec:
+  ports:
+  - port: 9313
+    protocol: TCP
+    targetPort: 9313
+  selector:
+    app: cloudprober
+  type: LoadBalancer
