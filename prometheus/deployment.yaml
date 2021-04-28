@@ -22,7 +22,7 @@ spec:
         emptyDir: {}
       containers:
       - name: prometheus
-        image: prometheus/prometheus
+        image: prom/prometheus
         command: 
         - /bin/prometheus
         args: 
