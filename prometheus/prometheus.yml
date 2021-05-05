@@ -1,5 +1,6 @@
 scrape_configs:
-- job_name: 'cloudprober'
+- job_name: cloudprober
   scrape_interval: 10s
   static_configs:
-  - targets: ['cloudprober:9313']
+  - targets: 
+    - cloudprober:9313

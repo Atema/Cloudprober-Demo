@@ -24,9 +24,9 @@ spec:
         command:
         - "/cloudprober"
         args: 
-        - --config_file
-        - /cfg/cloudprober.cfg
-        - --logtostderr
+        - "--config_file"
+        - "/cfg/cloudprober.cfg"
+        - "--logtostderr"
         volumeMounts:
         - name: cloudprober-config
           mountPath: /cfg
