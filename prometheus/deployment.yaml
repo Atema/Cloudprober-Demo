@@ -9,8 +9,6 @@ spec:
       app: prometheus
   template:
     metadata:
-      annotations:
-        checksum/config: "$CONFIG_CHECKSUM"
       labels:
         app: prometheus
     spec:
@@ -18,24 +16,16 @@ spec:
       - name: prometheus-config
         configMap:
           name: prometheus-config
-      - name: prometheus-data
-        emptyDir: {}
       containers:
       - name: prometheus
         image: prom/prometheus
-        command: 
-        - "/bin/prometheus"
-        args: 
-        - "--config.file=/etc/prometheus/prometheus.yml"
-        - "--storage.tsdb.path=/prometheus"
+        command: ["/bin/prometheus"]
+        args: ["--config.file=/etc/prometheus/prometheus.yml"]
         volumeMounts:
         - name: prometheus-config
           mountPath: /etc/prometheus
-        - name: prometheus-data
-          mountPath: /prometheus
         ports:
-        - name: http
-          containerPort: 9313
+        - containerPort: 9090
 ---
 apiVersion: v1
 kind: Service

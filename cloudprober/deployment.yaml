@@ -9,8 +9,6 @@ spec:
       app: cloudprober
   template:
     metadata:
-      annotations:
-        checksum/config: "$CONFIG_CHECKSUM"
       labels:
         app: cloudprober
     spec:
@@ -21,18 +19,13 @@ spec:
       containers:
       - name: cloudprober
         image: cloudprober/cloudprober
-        command:
-        - "/cloudprober"
-        args: 
-        - "--config_file"
-        - "/cfg/cloudprober.cfg"
-        - "--logtostderr"
+        command: ["/cloudprober"]
+        args: ["--config_file", "/cfg/cloudprober.cfg"]
         volumeMounts:
         - name: cloudprober-config
           mountPath: /cfg
         ports:
-        - name: http
-          containerPort: 9313
+        - containerPort: 9313
 ---
 apiVersion: v1
 kind: Service

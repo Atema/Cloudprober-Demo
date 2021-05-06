@@ -9,17 +9,14 @@ spec:
       app: testapi
   template:
     metadata:
-      annotations:
-        api_version: v4
       labels:
         app: testapi
     spec:
       containers:
       - name: testapi
-        image: gcr.io/devops-demo-311817/testapi
+        image: ghcr.io/atema/cloudprober-demo/testapi:latest
         ports:
-        - name: http
-          containerPort: 3000
+        - containerPort: 3000
 ---
 apiVersion: v1
 kind: Service
