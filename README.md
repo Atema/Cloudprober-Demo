@@ -137,5 +137,5 @@ So from now on to all of you, let’s monitor the services we create and let cus
 
 <details>
 <summary>Easter egg hint</summary>
-    + Did you notice the "real" prometheus, if not, can you guess what it is? (https://www.imdb.com/title/tt1446714/)
+    Did you notice the "real" prometheus, if not, can you guess what it is? (https://www.imdb.com/title/tt1446714/)
 </details>
