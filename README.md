@@ -6,10 +6,14 @@ Companies even offer guarantees of being available 99.9 % of the time.
 There are great services available that help as a developer to monitor this, but it's not cheap.
 This demo will show you how to set up and start using Cloudprober, an open source alternative, built by the folks at Google.
 
+
+## Prerequisites
+
+This demo assumes you have some basic knowledge about kubernetes and that you have a kubernetes cluster running, as well as one or several endpoint ready to probe. If not, feel free to use the one provided [here](./testapi) or simply use a public one.
+
 ## Steps
 
-To start of we've prepared a kubernetes cluster and an api endpoint to probe with Cloudprober. The demo does not require a specific cloud provider, we rely as much as
-we can on the kubernetes cli. In the demo we use Google Cloud though. If you wan't to follow along,
+To start of we've prepared a kubernetes cluster and an api endpoint to probe with Cloudprober. The demo does not require a specific cloud provider, we rely as much as we can on the kubernetes cli. In the demo we use Google Cloud though. If you wan't to follow along,
 please create a new kubernetes cluster on your favorite cloud platform
 and why not let it probe an api or application that you've built yourself.
 
