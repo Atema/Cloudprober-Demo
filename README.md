@@ -125,6 +125,10 @@ Prometheus also supports adding alerts, which is a great thing to add that this 
 
 ### Final notes
 
+![architecture overview](./assets/arch.png)
+
+In the image above we can see a drawing of what we've created. Leftmost we have the endpoints we probe, which we do from the deployed cloudprober instance, by specifying it in the configuration file. We expose Cloudprober through an internal ClusterIP and a public LoadBalancer (not neccesary in production). The deployed Prometheus deloyment then accesses the data through the clusterIP of Cloudprober and exposes a dashboard, reachable through the LoadBalancer. 
+
 We've know shown you how to use Cloudprober in combination with Prometheus to easility monitor your services. So instead of relying on angry users to tell you when they notice that something’s wrong in the future, why not let this much friendlier monitoring service
 tell you right when it happens instead, maybe before the user even notices.
 So from now on to all of you, let’s monitor the services we create and let customers complaining on availability be a thing of the past.
