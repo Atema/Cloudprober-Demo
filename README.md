@@ -134,3 +134,8 @@ In the image above we can see a drawing of what we've created. Leftmost we have 
 We've know shown you how to use Cloudprober in combination with Prometheus to easility monitor your services. So instead of relying on angry users to tell you when they notice that something’s wrong in the future, why not let this much friendlier monitoring service
 tell you right when it happens instead, maybe before the user even notices.
 So from now on to all of you, let’s monitor the services we create and let customers complaining on availability be a thing of the past.
+
+<details>
+<summary>Easter egg hint</summary>
+    + Did you notice the "real" prometheus, if not, can you guess what it is? (https://www.imdb.com/title/tt1446714/)
+</details>
