@@ -23,7 +23,7 @@ gcloud container clusters get-credentials <cluster name>
 As one of the alternatives for downloading Cloudprober is as a Docker image, we can easiliy deploy it on our cluster. 
 But first we need to create an accopanying configuration file. In the configuration file we list all the probes we wan't to use, i.e the things we want to monitor. 
 Below is a part of the used configuration file, it creates a probe of type HTTP, with a target of `testapi:3000` and a validator 
-making sure it only counts as a success if the return code is between `200-299`.
+making sure it only counts as a success if the return code is between `200-299`. We specify that it should check with an interval of 1s and a timeout in 500 ms. 
 
 ```
 ...
