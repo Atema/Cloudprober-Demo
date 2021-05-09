@@ -48,16 +48,25 @@ probe {
 ```
 The full configuration can be found [here](./cloudprober/cloudprober.cfg).
 
-... EXPLAIN HOW TO PUSH THE CONFIG FILE ...
+Let's deploy the configuration as a config map:
+```
+kubectl create configmap cloudprober-config --from-file=<path to config file>
+```
 
 Once the config file is done, we can deploy Cloudprober on our cluster. We'll do this with [this](./cloudprober/deployment.yaml) specification. 
 It creates a deployment with the Cloudprober docker image and passes the configuration file as an argument to it. It also creates two kubernetes services 
 for exposing the deployment both externally and internally. The external service here is only for us to be able to see what we've created. 
-*The external service can be removed when you're done with the demo.*
+*The external service can be removed when you're done with the demo.*. Let's apply the file to our cluster by running:
 
-...SHOW THE COMMAND TO DEPLOY THE YAML...
+```
+kubectl apply -f <path to deployment file>
+```
+
 
 ### 3 Cloudprober is ready
+
+
+
 Cloudprober should now be successfully deployed on our cluster and it should start the probes you've specified. 
 On [localhost:3300/status](https://localhost:3300/status) you can see the status of the probes. 
 Unfortunately this isn't a very nice user friendly and nice way to monitor the probes, which is why we'll now integrate it into Prometheus. 
