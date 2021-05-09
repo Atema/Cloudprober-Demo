@@ -9,7 +9,7 @@ This demo will show you how to set up and start using Cloudprober, an open sourc
 
 ## Prerequisites
 
-This demo assumes you have some basic knowledge about kubernetes and that you have a kubernetes cluster running, as well as one or several endpoint ready to probe. If not, feel free to use the one provided [here](./testapi) or simply use a public one.
+This demo assumes you have some basic knowledge about kubernetes and that you have a kubernetes cluster running, as well as one or several endpoint ready to probe. If not, feel free to use the one provided [here](./testapi) or simply use any public one.
 
 ## Steps
 
