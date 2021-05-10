@@ -1,5 +1,7 @@
 # Demonstration of Cloudproper
 
+The video can be found [here](https://youtu.be/qjzH51mBAO8)
+
 Proactively monitoring availability and performance of your systems is a critical thing.
 As time goes by the expectation on your services being available increases.
 Companies even offer guarantees of being available 99.9 % of the time.
