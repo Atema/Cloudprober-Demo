@@ -143,4 +143,5 @@ So from now on to all of you, let’s monitor the services we create and let cus
 ## Authors
 
 Simon Persson, siper@kth.se
+
 Martjin Atema, atema@kth.se
