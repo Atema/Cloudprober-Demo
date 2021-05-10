@@ -139,3 +139,8 @@ So from now on to all of you, let’s monitor the services we create and let cus
 <summary>Easter egg hint</summary>
     Did you notice the "real" prometheus, if not, can you guess what it is? (hint: https://www.imdb.com/title/tt1446714/)
 </details>
+
+## Authors
+
+Simon Persson, siper@kth.se
+Martjin Atema, atema@kth.se
